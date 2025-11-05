@@ -32,18 +32,17 @@ export function clasificarInventario
     estado = "Disponible";
   }
 
-  return{...producto, estado};
-  
+  return{...producto, estado}; 
 }
 
-const prod1: Producto = {
-  id: 1,
-  nombre: "Laptop",
-  precio: 1200,
-  stock: 10,
-  categoria: "Electrónica"
+export function agregarStock(producto: Producto, cantidad: number): Producto
+{
+
+    const stockActualizado = producto.stock + cantidad;
+
+    return{...producto,stock:stockActualizado};
+
 };
 
-const reporte = clasificarInventario(prod1);
 
-console.log(reporte);
+
