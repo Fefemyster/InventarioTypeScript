@@ -37,12 +37,21 @@ export function clasificarInventario
 
 export function agregarStock(producto: Producto, cantidad: number): Producto
 {
-
     const stockActualizado = producto.stock + cantidad;
-
     return{...producto,stock:stockActualizado};
-
 };
 
+export function totalizarPorCategoria(inventario: Producto[], categoria: tipoCategoria): number 
+{
+    const filtrarProductos = inventario.filter(producto => producto.categoria === categoria);
+
+    let totalCategoria = 0;
+
+    for(const producto of filtrarProductos){
+        totalCategoria += producto.precio * producto.stock;
+    }
+    
+    return totalCategoria;
+}
 
 
