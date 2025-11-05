@@ -18,7 +18,7 @@ const arregloProductos: Producto [] =[
     categoria: 'Electrónica',
     stock: 20,
     proveedor: 'Dell'},
-    
+
     { id: 2,
     nombre: 'Telefono',
     precio: 2000 ,
@@ -42,3 +42,9 @@ const arregloProductos: Producto [] =[
 ]   
 
 console.log(arregloProductos);
+
+
+const productoSeleccionado = arregloProductos[3];
+const sorteoInventario : reporteProducto = clasificarInventario(productoSeleccionado);
+
+console.log(sorteoInventario);
