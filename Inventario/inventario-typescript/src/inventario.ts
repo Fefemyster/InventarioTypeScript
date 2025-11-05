@@ -9,3 +9,10 @@ export interface Producto
     stock: number,
     proveedor ?: string
 };
+
+export type estadoInventario = "Disponible"| "Bajo Stock" |"Agotado"; 
+
+export interface reporteProducto extends Producto
+{
+ estado: estadoInventario;
+}
