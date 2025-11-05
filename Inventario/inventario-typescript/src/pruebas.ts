@@ -3,8 +3,6 @@ console.log('Hello World');
 
 import {
     type Producto,
-    type tipoCategoria,
-    type estadoInventario,
     type reporteProducto,
     clasificarInventario,
     agregarStock,
@@ -37,14 +35,25 @@ const arregloProductos: Producto [] =[
     nombre: 'Pollo Entero',
     precio: 2000 ,
     categoria: 'Alimentos',
-    stock: 40,
+    stock: 15,
     proveedor: 'Pollo Rey'},
 ]   
 
 console.log(arregloProductos);
 
 
-const productoSeleccionado = arregloProductos[3];
+const productoSeleccionado = arregloProductos[3]; //Indice del producto a mostrar, en este caso, Pollo en alimentos
 const sorteoInventario : reporteProducto = clasificarInventario(productoSeleccionado);
 
 console.log(sorteoInventario);
+
+
+const cantidadActualizada = arregloProductos[0];
+const stockActualizado : Producto = agregarStock(cantidadActualizada, 4);
+
+
+console.log(stockActualizado); //Stock base de 20, se sumaron 4, stock nuevo de 24
+
+const total : number = totalizarPorCategoria(arregloProductos,"Alimentos" );
+
+console.log(`El costo total de Alimentos es ${total}`);
